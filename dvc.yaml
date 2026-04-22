@@ -5,4 +5,11 @@ stages:
       - src/data/data_ingestion.py
       - params.yaml
     outs:
-      - data/raw/
+      - datas/raw
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py
+    deps:
+      - src/features/feature_engineering.py
+      - params.yaml
+    outs:
+      - datas/processed

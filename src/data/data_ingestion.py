@@ -27,10 +27,10 @@ def load_data(file_path: str) -> pd.DataFrame:
 
 def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str):
     try:
-        raw = os.path.join(data_path, "raw")
+        raw = os.path.join(data_path)
         os.makedirs(raw, exist_ok=True)
-        train_data.to_csv(os.path.join(raw, "train.csv"), index=False)
-        test_data.to_csv(os.path.join(raw, "test.csv"), index=False)
+        train_data.to_csv(os.path.join(raw,"train.csv"), index=False)
+        test_data.to_csv(os.path.join(raw,"test.csv"), index=False)
         logging.debug(f"Data saved successfully at {data_path}")
     except Exception as e:
         logging.error(f"Error saving data: {e}")

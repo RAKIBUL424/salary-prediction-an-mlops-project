@@ -3,3 +3,7 @@ data_ingestion:
   data_url: "https://raw.githubusercontent.com/RAKIBUL424/Datasets/refs/heads/main/job_salary_prediction_dataset.csv"
   test_size: 0.2
   random_state: 42
+feature_engineering:
+  train_data_path: "datas/raw/train.csv"
+  test_data_path: "datas/raw/test.csv"
+  data_output_path: "datas/processed"

@@ -5,15 +5,32 @@ stages:
     deps:
     - path: params.yaml
       hash: md5
-      md5: dbf0e75d97a70af79b2b0b965e539994
-      size: 204
+      md5: f3ccbbb855307833b16e49af7a97a0c5
+      size: 348
     - path: src/data/data_ingestion.py
       hash: md5
-      md5: 2ff9ea6fe8b5bcd15cd086a2d3aae2c4
-      size: 1993
+      md5: 09749f1f767cc925ac4f1a98e665f9a1
+      size: 1984
     outs:
-    - path: data/raw/
+    - path: datas/raw
       hash: md5
-      md5: 8786864e0d1e8951e6a92974cfde3cd2.dir
+      md5: 7b8bc35ef6d82426943c4618ace2986a.dir
       size: 17389128
+      nfiles: 2
+  feature_engineering:
+    cmd: python src/features/feature_engineering.py
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: f3ccbbb855307833b16e49af7a97a0c5
+      size: 348
+    - path: src/features/feature_engineering.py
+      hash: md5
+      md5: 67f3073c0ca691b1a4b5300b9bd508b9
+      size: 3013
+    outs:
+    - path: datas/processed
+      hash: md5
+      md5: 7d267925855a762558e54beb725fd63d.dir
+      size: 28116440
       nfiles: 2
